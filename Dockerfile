@@ -1,4 +1,3 @@
-FROM nginx:stable-alpine3.17-slim
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY static /usr/share/nginx/html
+FROM jtyr/asmttpd:0.4.5-1
+COPY static /static
+CMD ["/asmttpd", "/static", "80"]
